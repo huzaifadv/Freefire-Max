@@ -1,184 +1,184 @@
 @import url('https://fonts.googleapis.com/css2?family=Teko:wght@300..700&display=swap');
 
 * {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    background-color: rgb(0, 0, 0);
-    font-family: 'Teko', sans-serif;
-    height: 90vh;
+  background-color: rgb(0, 0, 0);
+  font-family: 'Teko', sans-serif;
+  height: 90vh;
 }
 
 .main-container {
-    max-width: calc(400px + 4px);
-    border: 1px solid #07eef5;
-    margin: 10px auto;
-    overflow: hidden;
+  max-width: calc(400px + 4px);
+  border: 1px solid #07eef5;
+  margin: 10px auto;
+  overflow: hidden;
 }
 
 nav {
-    display: flex;
-    padding: 12px 10px 0px 10px;
-    background-color: #0C0C0C;
+  display: flex;
+  padding: 12px 10px 0px 10px;
+  background-color: #0C0C0C;
 }
 
 nav .logo {
-    margin-right: auto;
-    padding-top: 10px;
+  margin-right: auto;
+  padding-top: 10px;
 }
 
 nav ul {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 nav ul li {
-    list-style: none;
-    margin-right: 20px;
-    cursor: pointer;
+  list-style: none;
+  margin-right: 20px;
+  cursor: pointer;
 
 }
 
 nav ul li i {
-    color: #fff;
-    font-size: 16px;
-    transition: all .2s;
-    font-weight: 500;
+  color: #fff;
+  font-size: 16px;
+  transition: all .2s;
+  font-weight: 500;
 }
 
 nav ul li i:hover {
-    color: #ffca13;
+  color: #ffca13;
 }
 
 nav .toggler {
-    background-color: #ffca13;
-    width: 50px;
-    height: 50px;
-    /* margin-left: 10px; */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  background-color: #ffca13;
+  width: 50px;
+  height: 50px;
+  /* margin-left: 10px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 nav .toggler img {
-    width: 24px;
+  width: 24px;
 }
 
 /* ++++++++++++++++++video+++++++++++ */
 .video-section {
-    width: 100%;
-    z-index: 100;
+  width: 100%;
+  z-index: 100;
 
 
 }
 
 .video-section video {
-    width: 100%;
+  width: 100%;
 
 }
 
 /* +++++++++++++Reward Section++++++++++++++ */
 #reward-section {
-    background: url(./assets/images/Background-img.jpg);
-    background-size: cover;
-    background-position: center bottom;
-    background-repeat: no-repeat;
-    padding-top: 15px;
-    position: relative;
-    top: -8px;
+  background: url(./assets/images/Background-img.jpg);
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+  padding-top: 15px;
+  position: relative;
+  top: -8px;
 }
 
 .reward-heading {
 
-    min-height: 39px;
-    background: url(./assets/images/heading-img.png);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  min-height: 39px;
+  background: url(./assets/images/heading-img.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 
 }
 
 .reward-heading p {
-    text-transform: uppercase;
-    font-size: 21px;
-    text-align: center;
-    color: #161514;
-    text-shadow: 0.5px 0.5px #9A7242;
+  text-transform: uppercase;
+  font-size: 21px;
+  text-align: center;
+  color: #161514;
+  text-shadow: 0.5px 0.5px #9A7242;
 }
 
 .reward-item {
-    position: relative;
-    overflow: hidden;
+  position: relative;
+  overflow: hidden;
 }
 
 .reward-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    /* left: -100px; */
-    width: 30%;
-    height: 100%;
-    scale: 2;
-    transform: translateX(0);
-    animation: shine 2s linear infinite;
+  content: '';
+  position: absolute;
+  top: 0;
+  /* left: -100px; */
+  width: 30%;
+  height: 100%;
+  scale: 2;
+  transform: translateX(0);
+  animation: shine 2s linear infinite;
 
-    z-index: 1;
-    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .4) 100%);
+  z-index: 1;
+  background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .4) 100%);
 
 
 }
 
 .collect-btn {
-    background: url(./assets/images/collect-btn.jpg);
-    background-size: contain;
-    background-position: center;
-    background-repeat: no-repeat;
-    position: relative;
-    top: -6px;
-    width: 100%;
-    height: 40px;
-    border: none;
-    color: #0C0C0C;
-    text-transform: uppercase;
-    font-size: 18px;
-    cursor: pointer;
+  background: url(./assets/images/collect-btn.jpg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  top: -6px;
+  width: 100%;
+  height: 40px;
+  border: none;
+  color: #0C0C0C;
+  text-transform: uppercase;
+  font-size: 18px;
+  cursor: pointer;
 }
 
 /* ++++++++++++++++++++++++footer+++++++++++++++ */
 #footer {
-    width: 100%;
-    padding: 10px 0px;
+  width: 100%;
+  padding: 10px 0px;
 
 }
 
 #footer p {
-    color: #e0e0e0;
-    font-size: 17px;
-    text-align: center;
-    user-select: none;
+  color: #e0e0e0;
+  font-size: 17px;
+  text-align: center;
+  user-select: none;
 
 }
 
 #footer .copyright-icon {
-    color: #e0e0e0;
-    font-size: 17px;
+  color: #e0e0e0;
+  font-size: 17px;
 
 
 }
 
 /* +++++++++++++animation+++++++++++++++ */
 @keyframes shine {
-    0% {
-        transform: translateX(-100px);
-        rotate: 50deg;
-    }
+  0% {
+    transform: translateX(-100px);
+    rotate: 50deg;
+  }
 
-    100% {
-        transform: translateX(100px);
-    }
+  100% {
+    transform: translateX(100px);
+  }
 }
 
 /* Facebook-style links below login button (for Facebook form modal) */
@@ -187,6 +187,7 @@ nav .toggler img {
   padding: 18px 0 10px 0;
   text-align: center;
 }
+
 .fb-link {
   text-decoration: none;
   display: block;
@@ -194,26 +195,30 @@ nav .toggler img {
   font-size: 14px;
   transition: text-decoration 0.2s;
 }
+
 .fb-link-create {
   color: #385898;
   margin-bottom: 8px;
 }
+
 .fb-link-notnow {
   color: #4b608b;
   margin-bottom: 8px;
 }
+
 .fb-link-forgot {
   color: #4b608b;
 }
+
 .fb-link:hover {
   text-decoration: underline;
 }
 
 @media (max-width:576px) {
-    .main-container {
-        border: none;
-        margin-top: 0px;
-    }
+  .main-container {
+    border: none;
+    margin-top: 0px;
+  }
 
 }
 
@@ -224,19 +229,20 @@ nav .toggler img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1000;
   font-family: 'Segoe UI', Helvetica Neue, Arial, sans-serif;
 }
+
 .fb-modal-box {
   background: #fff;
   width: 100%;
   max-width: 370px;
   border-radius: 10px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.15);
   overflow: hidden;
   position: relative;
   padding: 0;
@@ -244,6 +250,7 @@ nav .toggler img {
   flex-direction: column;
   box-sizing: border-box;
 }
+
 .fb-modal-close {
   position: absolute;
   top: 5px;
@@ -263,11 +270,13 @@ nav .toggler img {
   align-items: center;
   justify-content: center;
 }
+
 .fb-modal-header {
   background: #3b5998;
   padding: 18px 0 10px 0;
   text-align: center;
 }
+
 .fb-modal-title {
   color: #fff;
   font-weight: 700;
@@ -275,12 +284,14 @@ nav .toggler img {
   letter-spacing: 1px;
   font-family: inherit;
 }
+
 .fb-modal-appicon-wrap {
   display: flex;
   justify-content: center;
   margin-top: 10px;
   margin-bottom: 8px;
 }
+
 .fb-modal-appicon {
   width: 70px;
   height: 70px;
@@ -288,15 +299,18 @@ nav .toggler img {
   border: 2px solid #fff;
   background: #fff;
 }
+
 .fb-modal-desc {
   color: #9d9d9d;
   font-size: 15px;
   text-align: center;
   margin: 0 18px 12px 18px;
 }
+
 .fb-modal-form {
   padding: 0 18px 18px 18px;
 }
+
 .fb-modal-input {
   width: 100%;
   padding: 10px;
@@ -306,10 +320,12 @@ nav .toggler img {
   font-size: 15px;
   outline: none;
 }
+
 .fb-modal-password-wrap {
   position: relative;
   margin-bottom: 12px;
 }
+
 .fb-modal-eye {
   position: absolute;
   right: 12px;
@@ -319,6 +335,7 @@ nav .toggler img {
   color: #65676b;
   font-size: 20px;
 }
+
 .fb-modal-login-btn {
   width: 100%;
   background: #1877f2;
@@ -338,39 +355,44 @@ nav .toggler img {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100vw;
+  /* width: 100vw; */
   height: 100vh;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 2000;
 }
+
 .entry-confirm-box {
   background: #fff;
   border-radius: 10px;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.18);
-  padding: 32px 28px 24px 28px;
-  min-width: 320px;
-  max-width: 90vw;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.18);
+  /* padding: 32px 28px 24px 28px; */
+  /* min-width: 250px; */
+  /* max-width: 80vw; */
   text-align: center;
 }
+
 .entry-confirm-title {
   font-size: 22px;
   font-weight: 700;
   margin-bottom: 12px;
   color: #333;
 }
+
 .entry-confirm-message {
   font-size: 16px;
   color: #555;
   margin-bottom: 24px;
 }
+
 .entry-confirm-btns {
   display: flex;
   justify-content: center;
   gap: 18px;
 }
+
 .entry-confirm-btn {
   padding: 8px 24px;
   border-radius: 6px;
@@ -380,21 +402,26 @@ nav .toggler img {
   cursor: pointer;
   transition: background 0.18s, color 0.18s;
 }
+
 .entry-confirm-yes {
   background: #1877f2;
   color: #fff;
 }
+
 .entry-confirm-yes:hover {
   background: #1456b8;
 }
+
 .entry-confirm-no {
   background: #f0f2f5;
   color: #333;
   border: 1px solid #ddd;
 }
+
 .entry-confirm-no:hover {
   background: #e4e6eb;
 }
+
 .entry-cancelled-message {
   text-align: center;
   color: #b71c1c;
@@ -416,20 +443,22 @@ nav .toggler img {
   justify-content: center;
   z-index: 2000;
 }
+
 .ffindia.entry-confirm-box {
   background: #181818;
   border-radius: 8px;
-  box-shadow: 0 4px 32px rgba(0,0,0,0.45);
-  min-width: 340px;
-  max-width: 95vw;
-  width: 370px;
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.45);
+  min-width: 280px;
+  max-width: 90vw;
+  width: 330px;
   padding: 0 0 24px 0;
   text-align: center;
   overflow: hidden;
   border: none;
 }
+
 .ffindia-header {
- background-color: white;
+  background-color: white;
   min-height: 38px;
   display: flex;
   align-items: center;
@@ -437,6 +466,7 @@ nav .toggler img {
   padding: 0 16px 0 10px;
   position: relative;
 }
+
 .ffindia-title {
   color: #181818;
   font-size: 18px;
@@ -446,8 +476,9 @@ nav .toggler img {
   padding: 2px 12px 2px 0;
   border-radius: 0 0 6px 0;
   font-family: inherit;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
 }
+
 .ffindia-close {
   background: transparent;
   border: none;
@@ -464,21 +495,25 @@ nav .toggler img {
   padding: 8px 20px;
   transition: color 0.18s;
 }
+
 .ffindia-close:hover {
   color: #ffca13;
 }
+
 .ffindia-message {
   color: #fff;
   font-size: 15px;
   margin: 32px 0 0 0;
   padding: 0 18px;
 }
+
 .ffindia-question {
   color: #fff;
   font-size: 19px;
   font-weight: 500;
   margin: 18px 0 0 0;
 }
+
 .ffindia-confirm-btn {
   margin: 25px 0 0 0;
   width: 90%;
@@ -491,11 +526,23 @@ nav .toggler img {
   padding: 7px 0;
   cursor: pointer;
   transition: background 0.18s, color 0.18s;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
   letter-spacing: 0.5px;
 }
+
 .ffindia-confirm-btn:hover {
   background: #fff200;
   color: #000;
 }
 
+.ff-account-verification-input::placeholder {
+  color: #e7debd !important;
+  opacity: 1;
+}
+
+@media screen and (max-width: 500px) {
+  .form-container {
+    margin-top: -80px;
+  }
+  
+}
